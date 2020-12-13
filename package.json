@@ -1,0 +1,19 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gniht/rock-paper-scissors.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gniht/rock-paper-scissors/issues"
+  },
+  "homepage": "https://github.com/gniht/rock-paper-scissors#readme"
+}

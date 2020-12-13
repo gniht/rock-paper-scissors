@@ -14,7 +14,7 @@ function computerPlay(){
 
 function playRound(playerSelection, computerSelection){
   let result, winner, loser, descriptor;
-  const resultMessage = `You ${result}! ${winner} ${descriptor} ${loser}`
+   
   if(playerSelection.toLowerCase() == computerSelection){
     result = "tie";
     winner = "Nobody";
@@ -22,31 +22,39 @@ function playRound(playerSelection, computerSelection){
     loser = "a stalemate!";
   }
   if(playerSelection.toLowerCase() == "rock" && computerSelection == "scissors"){
+    result = "win";
     winner = playerSelection;
     descriptor = "smashes";
     loser = computerSelection;
   }else if (playerSelection.toLowerCase() == "rock" && computerSelection == "paper"){
+    result = "lose";
     winner = computerSelection;
     descriptor = "encases";
     loser = playerSelection;
   }
   if (playerSelection.toLowerCase() == "paper" && computerSelection == "rock"){
+    result = "win";
     winner = playerSelection;
     descriptor = "encases";
     loser = computerSelection;        
   }else if (playerSelection.toLowerCase() == "paper" && computerSelection == "scissors"){
+    result = "lose";
     winner = computerSelection;
     descriptor = "cut";
     loser = playerSelection; 
   }
   if(playerSelection.toLowerCase() == "scissors" && computerSelection == "paper"){
+    result = "win";
     winner = playerSelection;
     descriptor = "cut";
     loser = computerSelection;    
   }else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "rock"){
+    result = "lose";
     winner = computerSelection;
     descriptor = "smashes";
     loser = playerSelection;
   }
-  return resultMessage;  
+  return `You ${result}! ${winner} ${descriptor} ${loser}`;  
 }
+
+
