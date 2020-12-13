@@ -57,4 +57,15 @@ function playRound(playerSelection, computerSelection){
   return `You ${result}! ${winner} ${descriptor} ${loser}`;  
 }
 
+function game(rounds){
+  let playerSelection, computerSelection;
+  for (let i=0; i < rounds; i++){
+    playerSelection = prompt("Select your weapon.");
+    computerSelection = computerPlay();
+    alert(playRound(playerSelection, computerSelection));
+  }
+}
+
+
+
 
