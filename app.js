@@ -1,4 +1,29 @@
 
+const gameWindow = document.createElement("div");
+gameWindow.classList.add("container");
+const banner = document.createElement("h1");
+gameWindow.append(banner);
+const selection = document.createElement("div");
+const rockButton = document.createElement("button");
+rockButton.innerText = "rock";
+rockButton.classList.add("button");
+const paperButton = document.createElement("button");
+paperButton.innerText = "paper";
+paperButton.classList.add("button");
+const scissorsButton = document.createElement("button");
+scissorsButton.innerText = "scissors";
+scissorsButton.classList.add("button");
+selection.append(rockButton);
+selection.append(paperButton);
+selection.append(scissorsButton);
+banner.innerText = "Rock - Paper - Scissors";
+gameWindow.append(selection);
+document.querySelector("body").append(gameWindow);
+selection.addEventListener("click", e => {
+  const playerSelection = e.target.innerText;
+  alert(playRound(playerSelection, computerPlay()));  
+});
+
 function computerPlay(){
   let num = Math.floor(Math.random()*3);
   let result = "";
@@ -57,9 +82,12 @@ function playRound(playerSelection, computerSelection){
   return `You ${result}! ${winner} ${descriptor} ${loser}`;  
 }
 
-function game(rounds){
-  let playerSelection, computerSelection;
-  for (let i=0; i < rounds; i++){
+function game(){
+  //todo
+  let playerScore = 0;
+  let computerScore = 0;
+  let gameOver = (playerScore >= 5 || computerScore >= 5);
+  while(!gameOver){
     playerSelection = prompt("Select your weapon.");
     computerSelection = computerPlay();
     alert(playRound(playerSelection, computerSelection));
