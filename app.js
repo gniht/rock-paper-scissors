@@ -66,9 +66,7 @@ selection.addEventListener("click", e => {
     setTimeout(reset, 3000);
   }else{
     scoreBoard.innerText = `Human: ${score.playerScore} || Computer: ${score.computerScore}`;
-  }
-  
-  
+  }  
 });
 
 function computerPlay(){
@@ -134,19 +132,3 @@ function playRound(playerSelection, computerSelection, score){
   }
   return `You ${result}! ${winner} ${descriptor} ${loser}`;  
 }
-
-
-// function game(){//   
-//   let playerScore = 0;
-//   let computerScore = 0;
-//   let gameOver = (playerScore >= 5 || computerScore >= 5);
-//   while(!gameOver){
-//     playerSelection = prompt("Select your weapon.");
-//     computerSelection = computerPlay();
-//     alert(playRound(playerSelection, computerSelection));
-//   }
-// }
-
-
-
-
